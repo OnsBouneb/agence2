@@ -10,7 +10,12 @@
             <li class="active"><a href="#">
               Link <span class="sr-only">(current)</span>
             </a></li>
-            <li><a href="#">Link</a></li>
+            <li><a routerLink="/vols" routerLinkActive="active">Vol</a></li>
+            <li><a routerLink="/hebergements" routerLinkActive="active">hebergements</a></li>
+
+            <li><a routerLink="/hebergements">Vol</a></li>
+
+            <li><a href="#">Ville</a></li>
             <li class="dropdown" dropdown> <!-- {1} -->
                 <a dropdownToggle role="button"> <!-- {2} -->
                   Dropdown <span class="caret"></span></a>
@@ -27,6 +32,8 @@
         </ul>
     </div>
 </nav>
+
+
 
 <app-vol></app-vol>
 <app-search-customers></app-search-customers>
