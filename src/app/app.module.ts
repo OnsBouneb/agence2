@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
 import { HttpModule } from '@angular/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { VolComponent } from './vol/vol.component';
 import {VolService} from './vol.service';
 import {HebergementService}from './hebergement.service';
@@ -11,9 +14,11 @@ import { VilleComponent } from './ville/ville.component';
 import{VilleService} from './ville.service';
 import { TransportComponent } from './transport/transport.component';
 import {TransportService} from './transport.service';
-import { from } from 'rxjs';
+//import { from } from 'rxjs';
 import { SearchCustomersComponent } from './search-customers/search-customers.component';
 
+import { AppBoostrapModule } from '/home/onsbouneb/Music/agence/src/app/app-boostrap/app-boostrap.module';
+import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
   { path: 'vols', component: VolComponent },
@@ -25,22 +30,21 @@ const appRoutes: Routes = [
 
 ];
 
+
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    VolComponent,
-    HebergementComponent,
-    VilleComponent,
-    TransportComponent,
-    SearchCustomersComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
+  declarations: [AppComponent,VolComponent,
+   		 HebergementComponent,
+   		 VilleComponent,
+   		 TransportComponent,
+   		 SearchCustomersComponent
+
+],
+  imports: [BrowserModule, AppBoostrapModule,FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    RouterModule.forRoot(appRoutes)],
+
   exports: [
     FormsModule,
     ReactiveFormsModule
@@ -48,4 +52,4 @@ const appRoutes: Routes = [
   providers: [VolService,HebergementService,VilleService,TransportService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
